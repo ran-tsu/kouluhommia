@@ -8,7 +8,14 @@
 
 ;; Teht 5
 
-(defn karkausvuodet [pr]
-  (= pr karkausvuosi?)
-)
-(karkausvuodet 200)
+(fn karkausvuosi? [vuosi]
+  (if (= 0 (mod vuosi 100))
+      (= 0 (mod vuosi 400))
+      (= 0 (mod vuosi 4))))
+
+(karkausvuosi? 100)
+(karkausvuosi? 200)
+(karkausvuosi? 400)
+(karkausvuosi? 12)
+(karkausvuosi? 20)
+(karkausvuosi? 15)
